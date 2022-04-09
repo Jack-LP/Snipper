@@ -1,0 +1,273 @@
+@import 'variables';
+@import 'mixins';
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $bodyFont;
+}
+
+html {
+  font-size: 62.5%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+img {
+  max-width: 100%;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  &:visited {
+    color: inherit;
+  }
+  :visited {
+    color: inherit;
+  }
+}
+
+p {
+  line-height: 1.6;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+.container {
+  width: min(90%, 110rem);
+  margin: 0 auto;
+}
+
+.get-started-btn {
+  background-color: black;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  color: white;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  font-weight: 600;
+  span {
+    color: rgba(255, 255, 255, 0.507);
+    font-weight: 400;
+  }
+}
+
+.sign-in-btn {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+  color: white;
+}
+
+// Section one
+
+.section-one {
+  background: url(../Assets/Background.png) center no-repeat;
+  background-size: cover;
+  .container {
+    min-height: 100vh;
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-list {
+  gap: 2rem;
+  position: fixed;
+  left: -100%;
+  top: 6rem;
+  gap: 0;
+  padding-top: 2rem;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+  transition: 0.3s;
+  background-color: rgb(51, 51, 51);
+}
+
+.search-icon {
+  filter: invert(1);
+  cursor: pointer;
+}
+
+.nav-link {
+  padding-bottom: 2rem;
+}
+
+.nav-list.active {
+  left: 0;
+}
+
+.hamburger {
+  cursor: pointer;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: center;
+  align-items: center;
+  h1 {
+    font-size: 5rem;
+  }
+  p {
+    color: #333;
+  }
+  button {
+    width: 100%;
+  }
+}
+
+.hero-image {
+  display: flex;
+  margin-top: auto;
+}
+
+// Section two
+
+.section-two {
+  .container {
+    padding: 4rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+  }
+}
+
+.section-two-image {
+  order: 1;
+}
+
+.section-two-text {
+  order: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  h2 {
+    font-size: 3.3rem;
+  }
+  button {
+    align-self: flex-start;
+  }
+}
+
+// Footer
+
+.footer {
+  .container {
+    padding-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    .logo {
+      height: auto;
+      width: 12rem;
+    }
+  }
+}
+
+.conditions {
+  display: flex;
+  gap: 3rem;
+  color: #333;
+}
+
+@media screen and (min-width: 700px) {
+  .section-one {
+    .container {
+      justify-content: space-between;
+    }
+  }
+  .hero-text {
+    h1 {
+      font-size: 6.5rem;
+    }
+    p {
+      font-size: 1.8rem;
+      padding: 0 20rem;
+    }
+    button {
+      width: 20rem;
+      padding: 1.3rem 1rem;
+    }
+  }
+  .hero-image {
+    margin-top: 0;
+  }
+  .nav-list {
+    display: flex;
+    position: relative;
+    left: 0;
+    top: 0;
+    flex-direction: row;
+    width: fit-content;
+    gap: 3rem;
+    align-items: center;
+    background-color: transparent;
+    padding-top: 0;
+  }
+  .search-icon {
+    filter: invert(0);
+  }
+  .nav-link {
+    padding-bottom: 0;
+  }
+  .sign-in-btn {
+    color: black;
+  }
+  .hamburger {
+    display: none;
+  }
+
+  .section-two {
+    .container {
+      padding: 6rem 0;
+      flex-direction: row;
+    }
+  }
+  .section-two-image {
+    order: 2;
+  }
+  .section-two-text {
+    order: 1;
+    h2 {
+      font-size: 3.5rem;
+    }
+    p {
+      font-size: 1.7rem;
+    }
+  }
+
+  .footer {
+    .container {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0;
+      .logo {
+        height: auto;
+        width: 12rem;
+      }
+    }
+  }
+}
